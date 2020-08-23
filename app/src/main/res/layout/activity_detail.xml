@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/topLayout">
+
+        <include layout="@layout/single_breed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/singleBreedBasicInfo"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300sp"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:src="@drawable/image_for_catbreed"
+            android:layout_below="@+id/singleBreedBasicInfo"
+            android:id="@+id/imageView_catBreedImage"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/topLayout"
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp"
+        android:id="@+id/descriptionLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="DESCRIPTION:"
+            android:id="@+id/descriptionLabel" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/descriptionLabel"
+            android:id="@+id/descriptionValueLabel"
+            tools:text="some description goes here"/>
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionLayout"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="5sp"
+        android:id="@+id/detailsLabelsSection">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5sp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:text="TEMPERAMENT:"
+            android:id="@+id/temperamentLabel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/temperamentLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5sp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:text="LIFE SPAN:"
+            android:id="@+id/lifeSpanLabel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/lifeSpanLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5sp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:text="ORIGIN:"
+            android:id="@+id/originLabel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/originLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5sp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:text="WEIGHT:"
+            android:id="@+id/weightLabel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/weightLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5sp"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:text="COUNTRY:"
+            android:id="@+id/countryCodeLabel"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/detailsLabelsSection"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionLayout"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="5sp"
+        android:id="@+id/detailsValueSection">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5sp"
+            android:gravity="right"
+            tools:text="some temperament"
+            android:id="@+id/temperamentValueLabel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/temperamentValueLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5sp"
+            android:gravity="right"
+            tools:text="some life span"
+            android:id="@+id/lifeSpanValueLabel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/lifeSpanValueLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5sp"
+            android:gravity="right"
+            tools:text="some origin"
+            android:id="@+id/originValueLabel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/originValueLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5sp"
+            android:gravity="right"
+            tools:text="some weight"
+            android:id="@+id/weightValueLabel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/weightValueLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5sp"
+            android:gravity="right"
+            tools:text="some country"
+            android:id="@+id/countryCodeValueLabel"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
