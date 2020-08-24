@@ -77,9 +77,11 @@ class DetailActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {
+                    //on success
                     toastLoadingImageFromUrl.cancel()
                     imageView_catBreedImage.setImageBitmap(it.blockingGet())},
                 {
+                    //on failure
                     toastLoadingImageFromUrl.cancel()
                     showErrorDialog(it)}
             )
