@@ -75,15 +75,14 @@ class DetailActivity : AppCompatActivity() {
         }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .toObservable()
-            .doOnNext {
-                toastLoadingImageFromUrl.cancel()
-                imageView_catBreedImage.setImageBitmap(it.blockingGet())
-            }
-            .doOnError {
-                toastLoadingImageFromUrl.cancel()
-                showErrorDialog(it)
-            }
+            .subscribe(
+                {
+                    toastLoadingImageFromUrl.cancel()
+                    imageView_catBreedImage.setImageBitmap(it.blockingGet())},
+                {
+                    toastLoadingImageFromUrl.cancel()
+                    showErrorDialog(it)}
+            )
     }
 
     private fun loadImageFromUrl(url: String) : Single<Bitmap> {
